@@ -1,0 +1,23 @@
+#search-results {
+    position: absolute;
+    background-color: white;
+    /* border: 1px solid #ccc; */
+    max-height: 600px;
+    /* overflow-y: auto; */
+    width: 100%;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.search-result-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block; 
+    color: black;
+    text-decoration: none;
+}
+
+.search-result-item:hover {
+    background-color: #f0f0f0;
+    color: black;
+}

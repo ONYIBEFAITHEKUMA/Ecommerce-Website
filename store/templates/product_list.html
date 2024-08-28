@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="product-container">
+    <div class="category-section">
+       
+
+        </div>
+        
+        <ul class="category-list">
+            {% for category in categories %}
+            <li><a href="#">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="product-section">
+      <div class="women-attire"> 
+        <div class="h1">
+            <h2>Buy Today And Enjoy</h2>
+       </div>
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-item">
+                {% if product.image %}
+                <img src="{{ product.image.url }}" alt=" Image for {{ product.name }}" class="product-image">
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
+                <h3>{{ product.name }}</h3>
+                {% comment %} <p>{{ product.description }}</p> {% endcomment %}
+                <p>Price: ${{ product.price }}</p>
+                <p>Stock: {{ product.stock }}</p>
+              
+                <a class='add_to_cart' href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

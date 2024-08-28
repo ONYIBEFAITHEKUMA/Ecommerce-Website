@@ -1,0 +1,396 @@
+Customer shops for a product
+Customer changes quantity
+The customer adds an item to the cart
+Customer views cart
+Customer checks out
+Customer sends order
+
+
+Admin Interface
+
+Admin logs in
+Admin inserts item
+Admin removes item
+Admin modifies item
+
+
+
+
+
+    <div class="row">
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/TV.jpg' %}" alt="">
+            </a>
+            <span>televisions</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/mp.jpg' %}" alt="">
+            </a>
+            <span>makeup</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/redmi.jpg' %}" alt="">
+            </a>
+            <span>redmi product</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/washing_machine.png' %}" alt="">
+            </a>
+            <span>washing machines</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/nexus.jpg' %}" alt="">
+            </a>
+            <span>televisions</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/mouse.jpg' %}" alt="">
+            </a>
+            <span>mouse</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/dragon.jpg' %}" alt="">
+            </a>
+            <span>nexus</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/cream.jpg' %}" alt="">
+            </a>
+            <span>nevea</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/fan.jpg' %}" alt="">
+            </a>
+            <span>electric fan</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/airfryer.png' %}" alt="">
+            </a>
+            <span>Air fryers</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/djustable.jpg' %}" alt="">
+            </a>
+            <span>electric fan</span>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/gen.jpg' %}" alt="">
+            </a>
+            <span>Generators</span>
+            
+        </div>
+    </div>
+
+    <div class="topic-one">
+        <div>
+            <h1>Accessories</h1></div>
+        <div>
+            <a href="">SEE ALL</a>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <img src="{% static 'images/heel.jpg' %}" alt="">
+        <span>men Clothes</span>
+        <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked">
+            <span class="fa fa-star checked"></span>
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <img src="{% static 'images/shoe.jpg' %}" alt="">
+        <span>men Clothes</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked">
+        <span class="fa fa-star checked"></span>
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <img src="{% static 'images/men5.jpg' %}" alt="">
+        <span>men Clothes</span>
+        <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked">
+            <span class="fa fa-star checked"></span>
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <a href="{% url 'product_list_by_category' category='accessory' %}">
+        <img src="{% static 'images/milo.jpg' %}" alt="">
+        </a>
+        <span>men Clothes</span>
+        <span class="fa fa-star checked"></span>
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <a href="{% url 'product_list_by_category' category='accessory' %}">
+        <img src="{% static 'images/oraimo.jpg' %}" alt="">
+        </a>
+        <span>men Clothes</span>
+        <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked">
+            <span class="fa fa-star checked"></span>
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <a href="{% url 'product_list_by_category' category='accessory' %}">
+        <img src="{% static 'images/phone.jpg' %}" alt="">
+        </a>
+        <span>men Clothes</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked">
+        <span class="fa fa-star checked"></span>
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+    </div>
+
+   
+      <div class="row">
+      <div class="col-2">
+        <a href="{% url 'product_list_by_category' category='accessories' %}">
+        <img src="{% static 'images/jumia2.png' %}" alt="">
+        </a>
+        <span>Pc</span>
+        <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked">
+            <span class="fa fa-star checked"></span>
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <a href="{% url 'product_list_by_category' category='accessory' %}">
+        <img src="{% static 'images/jumai1.png' %}" alt="">
+        </a>
+        <span>Phone</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked">
+        <span class="fa fa-star checked"></span>
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <a href="{% url 'product_list_by_category' category='women' %}">
+        <img src="{% static 'images/heel.jpg' %}" alt="">
+        </a>
+        <span>Heel</span>
+        <div>
+            
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked">
+            <span class="fa fa-star checked"></span>
+                </div>
+               
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <a href="{% url 'product_list_by_category' category='men' %}">
+        <img src="{% static 'images/men4.jpg' %}" alt="">
+        </a>
+        <span>men Clothes</span>
+        <div>
+            
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked">
+            <span class="fa fa-star checked"></span>
+                </div>
+               
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <a href="{% url 'product_list_by_category' category='accessory' %}">
+        <img src="{% static 'images/computer.png' %}" alt="">
+        </a>
+        <span>laptop</span>
+        <div>
+            
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked">
+            <span class="fa fa-star checked"></span>
+                </div>
+               
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+      <div class="col-2">
+        <a href="{% url 'product_list_by_category' category='men' %}">
+        <img src="{% static 'images/shoe.jpg' %}" alt="">
+        </a>
+        <span>men Clothes</span>
+        <div>
+            
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked">
+    <span class="fa fa-star checked"></span>
+        </div>
+       
+        <p>Lorem ipsum doloriure delectus repellat?</p>
+      </div>
+   <div>
+       </div>
+
+
+    </div>
+    <div class="topic-two">
+        <div>
+            <h1>Accessories</h1></div>
+        <div>
+            <a href="">SEE ALL</a>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <img src="{% static 'images/TV.jpg' %}" alt="">
+            <span>televisions</span>
+            <h4 class="price1">#7000</h4>
+            <h4 class="price2">#15000</h4>
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/mp.jpg' %}" alt="">
+            </a>
+            <span>makeup</span>
+            <h4 class="price1">#7000</h4>
+            <h4 class="price2">#15000</h4>
+            
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/redmi.jpg' %}" alt="">
+            </a>
+            <span>redmi product</span>
+            <h4 class="price1">#7000</h4>
+            <h4 class="price2">#15000</h4>
+            
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/washing.jpg' %}" alt="">
+            </a>
+            <span>washing machines</span>
+            <h4 class="price1">#7000</h4>
+            <h4 class="price2">#15000</h4>
+            
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/nexus.jpg' %}" alt="">
+            </a>
+            <span>televisions</span>
+            <h4 class="price1">#7000</h4>
+            <h4 class="price2">#15000</h4>
+            
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/mouse.jpg' %}" alt="">
+            </a>
+            <span>mouse</span>
+            <h4 class="price1">#7000</h4>
+            <h4 class="price2">#15000</h4>
+            
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/dragon.jpg' %}" alt="">
+            </a>
+            <span>nexus</span>
+            <h4 class="price1">#200000</h4>
+            <h4 class="price2">#300000</h4>
+            
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='women' %}">
+            <img src="{% static 'images/cream.jpg' %}" alt="">
+            </a>
+            <span>nevea</span>
+            <h4 class="price1">#3000</h4>
+            <h4 class="price2">#5000</h4>
+            
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/fan.jpg' %}" alt="">
+            </a>
+            <span>electric fan</span>
+            <h4 class="price1">#17000</h4>
+            <h4 class="price2">#25000</h4>
+            
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/airfryer.png' %}" alt="">
+            </a>
+            <span>Air fryers</span>
+            <h4 class="price1">#7000</h4>
+            <h4 class="price2">#15000</h4>
+            
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/djustable.jpg' %}" alt="">
+            </a>
+            <span>electric fan</span>
+            <h4 class="price1">#20000</h4>
+            <h4 class="price2">#35000</h4>
+        
+            
+        </div>
+        <div class="col-2">
+            <a href="{% url 'product_list'  %}">
+            <img src="{% static 'images/gen.jpg' %}" alt="">
+        </a>
+            <span>Generators</span>
+            <h4 class="price1">#200000</h4>
+            <h4 class="price2">#350000</h4>
+            
+           
+            
+        </div>
+    </div>
+    
+    {% comment %} <div class="product-section"> {% endcomment %}
+       
+    </div>
+    
+

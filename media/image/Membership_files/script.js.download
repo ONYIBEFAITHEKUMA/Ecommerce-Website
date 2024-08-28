@@ -1,0 +1,120 @@
+! function(w) {
+    'use strict';
+
+    function generateSessionId() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    function getFirstReferrer() {
+        var firstReferrer = sessionStorage.getItem('firstReferrer');
+        if (!firstReferrer) {
+            firstReferrer = document.referrer;
+            sessionStorage.setItem('firstReferrer', firstReferrer);
+        }
+        return firstReferrer;
+    }
+
+    function getVisitorId() {
+        var visitorId = sessionStorage.getItem('visitorId');
+        if (!visitorId) {
+            visitorId = generateSessionId();
+            sessionStorage.setItem('visitorId', visitorId);
+        }
+
+        return visitorId;
+    }
+
+    /**
+     * Send the request
+     * @param event
+     * @param referrer Needed for SPAs dynamic history push
+     */
+    function sendRequest(event, referrer) {
+        return new Promise((resolve, reject) => {
+            var trackingCode = document.getElementById('ZwSg9rf6GA');
+
+            if (trackingCode.getAttribute('data-dnt') === 'true') {
+                if (navigator.doNotTrack) {
+                    reject('Do Not Track is enabled');
+                    return;
+                }
+            }
+
+            var firstReferrer = getFirstReferrer();
+            var visitorId = getVisitorId();
+
+            var params = {
+                firstReferrer: firstReferrer,
+                visitorId: visitorId
+            };
+
+            if (referrer) {
+                params.referrer = referrer;
+            } else {
+                params.referrer = w.document.referrer;
+            }
+
+            params.page = w.location.href.replace(/#.+$/,'');
+            params.screen_resolution = screen.width + 'x' + screen.height;
+
+            if (event) {
+                params.event = event;
+                setTimeout(function() {
+                    sendEventData(params).then(resolve).catch(reject);
+                }, 100);
+                // sendEventData(params).then(resolve).catch(reject);
+            } else {
+                sendEventData(params).then(resolve).catch(reject);
+            }
+        });
+    }
+
+    function sendEventData(params) {
+        return new Promise((resolve, reject) => {
+            var request = new XMLHttpRequest();
+            request.open("POST", document.getElementById('ZwSg9rf6GA').getAttribute('data-host') + "/api/event", true);
+            request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+
+            request.onload = function() {
+                if (request.status >= 200 && request.status < 300) {
+                    resolve(request.responseText);
+                } else {
+                    reject(request.statusText);
+                }
+            };
+
+            request.onerror = function() {
+                reject(request.statusText);
+            };
+
+            request.send(JSON.stringify(params));
+        });
+    }
+
+
+    try {
+        // Rewrite the push state function to detect path changes in SPAs
+        var pushState = history.pushState;
+        history.pushState = function () {
+            var referrer = w.location.href.replace(/#.+$/,'');
+            pushState.apply(history, arguments);
+            sendRequest(null, referrer);
+        };
+
+        // Listen to the browser's back & forward buttons
+        w.onpopstate = function(event) {
+            sendRequest(null);
+        };
+
+        // Define the event method
+        w.pa = {}; w.pa.track = sendRequest;
+
+        // Send the initial request
+        sendRequest(null);
+    } catch (e) {
+        console.log(e.message);
+    }
+}(window);

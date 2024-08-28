@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="all-product-container">
+    <div class="women-attire">
+        <div class="h1">
+            <h1>Your Beuty is Your Pride</h1>
+        </div>
+        
+    
+   
+        <div class="col-6">
+            <a href="{% url 'product_list_by_category' category='health' %}">
+            <img src="{% static 'images/Nivea_BD_27TH_712x384.png' %}" alt="">
+        </a>
+    </div>
+    <div class="col-6">
+        <a href="{% url 'product_list_by_category' category='health' %}">
+            <img src="{% static 'images/JumiaCCNG712_384.jpg' %}" alt="">
+        </a>
+    </div>
+
+   
+    <div class="row">
+       
+        {% for product in health %}
+        <div class="col-2">
+            {% if product.image %}
+            <a href="{% url 'product_list_by_category' category='health' %}">
+            <img src="{{ product.image.url }}" alt="Image for {{ product.name }}" class="all-product-container-img">
+            {% else %}
+            <p>No image available</p>
+            {% endif %}
+            <h3>{{ product.name }}</h3>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% comment %} <div class="col-6">
+        <img src="{% static 'images/360_F_383218557_t5fC98hOdrg0hr4BsulCZ9mPX9a4uube.jpg' %}" alt="">
+    </div> {% endcomment %}
+
+
+<div class="women-attire">
+   
+    <div class="row">
+        <div class="h1">
+            <h1>Health & Beauty</h1>
+        </div>
+        {% for product in health %}
+        <div class="col-2">
+            {% if product.image %}
+            <a href="{% url 'product_list_by_category' category='computer' %}">
+            <img src="{{ product.image.url }}" alt="Image for {{ product.name }}" class="all-product-container-img">
+            {% else %}
+            <p>No image available</p>
+            {% endif %}
+            <h3>{{ product.name }}</h3>
+            <h3>${{ product.price }}</h3>
+           
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+</div>
+{% endblock content %}

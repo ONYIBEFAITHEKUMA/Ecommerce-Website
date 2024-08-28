@@ -1,0 +1,30 @@
+{% extends 'base/html' %}
+{% load static %}
+
+{% block content %}
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% for category in categories %}
+                    <li><a href="{% url 'category_list' category.slug %}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>{{ category.name }}</h1>
+        <div>
+            {% for product in products %}
+                <div>
+                    <a href="{% url 'product_detail' product.slug %}">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <h2>{{ product.name }}</h2>
+                        <p>${{ product.price }}</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock content %}

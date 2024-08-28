@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+
+<div class="cart-container">
+    
+      
+        <div class="cart">
+        <ul>
+            {% for item in cart_items %}
+                <li>
+                    {% if item.product.image %}
+                        <img src="{{ item.product.image.url }}" alt="Image for {{ item.product.name }}" class="">
+                    {% endif %}
+                    <h3>{{ item.product.name }}</h3>
+                    {% comment %} <p>Quantity: {{ item.quantity }}</p><br> {% endcomment %}
+                    <p>Price: ${{ item.product.price }}</p><br>
+                   
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="Checkout">
+        <h1>CART SUMMARY</h1>
+        <p>Subtotal: ${{ total_price }}</p>
+        <p> Total price is {{ total_price }}</p>
+        
+        <form action="" method="post" id="check-out-form">
+            {% csrf_token %}
+            <input type="hidden" id="total_price" name="total_price" value="{{ total_price }}" />
+            <button type="submit"  id="pay-with-flutterwave">Checkout: ${{ total_price }}</button>
+        </form>
+        
+        
+    </div>
+</div>
+
+
+
+{% endblock %}

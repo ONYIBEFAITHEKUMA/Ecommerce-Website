@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<div class="all-product-container">
+    <div class="women-attire">
+        <div class="h1">
+            <h1>Welcome to Our Gadget Home</h1>
+        </div>
+        
+    
+   
+        <div class="col-6">
+            <a href="{% url 'product_list_by_category' category='health' %}">
+            <img src="{% static 'images/572px_x250px (1).png' %}" alt="">
+        </a>
+    </div>
+    <div class="col-6">
+        <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{% static 'images/572_x_250_HOME-L.png' %}" alt="">
+        </a>
+    </div>
+
+   
+    <div class="row">
+       
+        {% for product in accessory %}
+        <div class="col-2">
+            {% if product.image %}
+            <a href="{% url 'product_list_by_category' category='accessory' %}">
+            <img src="{{ product.image.url }}" alt="Image for {{ product.name }}" class="all-product-container-img">
+            {% else %}
+            <p>No image available</p>
+            {% endif %}
+            <h3>{{ product.name }}</h3>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% comment %} <div class="col-6">
+        <img src="{% static 'images/360_F_383218557_t5fC98hOdrg0hr4BsulCZ9mPX9a4uube.jpg' %}" alt="">
+    </div> {% endcomment %}
+
+
+<div class="women-attire">
+   
+    <div class="row">
+        <div class="h1">
+            <h1>Elecetronics</h1>
+        </div>
+        {% for product in accessory %}
+        <div class="col-2">
+            {% if product.image %}
+            <a href="{% url 'product_list_by_category' category='computer' %}">
+            <img src="{{ product.image.url }}" alt="Image for {{ product.name }}" class="all-product-container-img">
+            {% else %}
+            <p>No image available</p>
+            {% endif %}
+            <h3>{{ product.name }}</h3>
+            <h3>${{ product.price }}</h3>
+           
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<div class="home-container">
+    <div class="home">
+     {% comment %} <h1>Jumia Nigeria - Nigeria's No. 1 Shopping Destination</h1> {% endcomment %}
+       {% comment %} <h1> Shop for Everything You Need on Jumia Nigeria</h1> {% endcomment %}
+      <p>
+        
+            <span>listaccmall</span>, Nigeria's first and largest online retailer, today celebrates 2 years of delivering smiles and empowering Nigerians. <span>listaccmall</span> has pioneered e-commerce in Nigeria and has attracted global recognition to the industry in Nigeria, which has also attracted huge foreign direct investment into the country leading to a rise in the industry's contribution to Nigeria's GDP, with further prospects to emerge within the e-commerce sector in the coming years. <span>listaccmall</span> rounded off a stellar year in 2013 by winning the best new retailer at the World Retail Awards, the first time any African retailer has won an award at this prestigious event.
+
+The e-commerce story in Nigeria began 2 years ago with the inception of <span>listaccmall</span> Nigeria, creating an avenue for customers to shop online at ease with convenience on delivery. Two years ago, we told the story of how innovation can bring major change to the economy; the rapid successes achieved so far are attributed to our wide assortment, customer service, our focus on entrepreneurship, and more importantly our people.
+
+This year the theme for <span>listaccmall</span>'s anniversary as it turns 2 is 'Empowering Nigerians' and with the e-commerce tech space growing so fast, we have seen many ways <span>listaccmall</span> has impacted Nigeria's tech landscape. We have created jobs for our dynamic work force of over 1,000 Nigerians with an average age of 27, whilst also empowering them to become entrepreneurs, by constantly equipping them with the right tools and training through the recent launch of our <span>listaccmall</span> Academy. <span>listaccmall</span> has also manufacturers of 'Made in Nigeria products' as well as other SME's through the introduction of the <span>listaccmall</span> marketplace helping them reach out to their target audience and increase sales significantly. Most importantly for us at <span>listaccmall</span> is the utmost need to empower our customers through providing them with an organized retail structure backed by world class customer service which was inexistent in Nigeria till the arrival of <span>listaccmall</span> Nigeria.
+
+'We continue to be a success story as we continue to change lives and the way people see the future of retail in Nigeria which makes up for 19.2% contribution to the Nations GDP. We have paved the way for the industry and we are helping to grow the economy by growing the industry through several developmental initiatives we have embarked on centering on our people and alliances with various stakeholders. After 2 years the bar has been set high and we will continue to satisfy our customers, as we grow bigger and better. <span>listaccmall</span> is the home of retail in Nigeria and that is the big picture for us' Says Co-CEO <span>listaccmall</span> Nigeria Nicolas Martin
+
+<span>listaccmall</span> has lined up activities to celebrate '<span>listaccmall</span> at 2' and will be using this fete to celebrate its customers, suppliers, partners and staff who have been instrumental to the growth of <span>listaccmall</span> and the e-commerce industry at large. Dates and schedule of events will be announced soon.
+<span>listaccmall</span>, Nigeria's first and largest online retailer, today celebrates 2 years of delivering smiles and empowering Nigerians. <span>listaccmall</span> has pioneered e-commerce in Nigeria and has attracted global recognition to the industry in Nigeria, which has also attracted huge foreign direct investment into the country leading to a rise in the industry's contribution to Nigeria's GDP, with further prospects to emerge within the e-commerce sector in the coming years. <span>listaccmall</span> rounded off a stellar year in 2013 by winning the best new retailer at the World Retail Awards, the first time any African retailer has won an award at this prestigious event.
+
+The e-commerce story in Nigeria began 2 years ago with the inception of <span>listaccmall</span> Nigeria, creating an avenue for customers to shop online at ease with convenience on delivery. Two years ago, we told the story of how innovation can bring major change to the economy; the rapid successes achieved so far are attributed to our wide assortment, customer service, our focus on entrepreneurship, and more importantly our people.
+
+This year the theme for <span>listaccmall</span>'s anniversary as it turns 2 is 'Empowering Nigerians' and with the e-commerce tech space growing so fast, we have seen many ways <span>listaccmall</span> has impacted Nigeria's tech landscape. We have created jobs for our dynamic work force of over 1,000 Nigerians with an average age of 27, whilst also empowering them to become entrepreneurs, by constantly equipping them with the right tools and training through the recent launch of our <span>listaccmall</span> Academy. <span>listaccmall</span> has also manufacturers of 'Made in Nigeria products' as well as other SME's through the introduction of the <span>listaccmall</span> marketplace helping them reach out to their target audience and increase sales significantly. Most importantly for us at <span>listaccmall</span> is the utmost need to empower our customers through providing them with an organized retail structure backed by world class customer service which was inexistent in Nigeria till the arrival of <span>listaccmall</span> Nigeria.
+        
+</p>
+
+    </div>
+
+</div>
+
+</div>
+{% endblock content %}

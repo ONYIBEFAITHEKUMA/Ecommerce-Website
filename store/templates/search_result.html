@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="all-product-container"> 
+  
+    <div class="accessory">
+      
+        <div class="row">  
+           
+            {% for product in results_data %}
+            <div class="col-2">
+                {% if product.image %}
+                <a href="{% url 'product_list_by_category' category='accessory' %}">
+                <img src="{{ product.image.url }}" alt="Image for {{ product.name }}" class="all-product-container-img">
+            {% else %}
+            <p>No image available</p>
+             {% endif %}
+             <h3>{{ product.name }}</h3>
+             <h4>${{product.price }}</h4>
+            </a>
+        </div>
+        {% endfor %}
+        </div>
+    </div>  
+        
+
+
+{% endblock content %}
+

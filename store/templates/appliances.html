@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="all-product-container">
+    <div class="women-attire">
+        <div class="row">
+            <div class="h2">
+                <h2>appliances</h2>
+                <div>
+                    <a href="#">SEE MORE</a>
+                </div>
+            </div>
+            {% for product in appliances %}
+            <div class="col-2">
+                {% if product.image %}
+                <img src="{{ product.image.url }}" alt="Image for {{ product.name }}" class="all-product-container-img">
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
+                <h3>{{ product.name }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    
+    </div>
+
+</div>
+
+
+{% endblock content %}

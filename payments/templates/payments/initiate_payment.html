@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Initiate Payment</h2>
+<form method="post" action="{% url 'initiate_payment' product.id %}">
+    {% csrf_token %}
+    <label for="amount">Amount:</label>
+    {{ form.amount }}
+    <br>
+    <label for="email">Email:</label>
+    {{ form.email }}
+    <br>
+    <button type="submit">Pay Now</button>
+</form>
+
+
+
+
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+<script>
+    document.getElementById('payButton').addEventListener('click', function() {
+        FlutterwaveCheckout({
+            public_key: "YOUR_PUBLIC_KEY",
+            tx_ref: "tx_" + Math.floor((Math.random() * 1000000000) + 1),
+            amount: document.querySelector('input[name="amount"]').value,
+            currency: "USD",
+            payment_type: "mobilemoneyghana",
+            email: "{{ user.email }}",
+            phone_number: "{{ user.profile.phone_number }}",
+            full_name: "{{ user.get_full_name }}",
+            callback: function (data) {
+                // On successful payment
+                window.location.href = "{% url 'verify_payment' %}?reference=" + data.tx_ref;
+            },
+            onclose: function() {
+                // On cancel
+                alert("Payment was cancelled");
+            }
+        });
+    });
+</script>
+{% endblock %}
